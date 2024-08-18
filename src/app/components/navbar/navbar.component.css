@@ -1,0 +1,23 @@
+.navbar {
+    width: 96px;
+    height: 98vh;
+    background-color: var(--semi-dark-blue);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    color: white;
+    padding: 16px;
+    
+
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px 0;
+}
+
+.links :nth-child(4) {
+    margin-top: auto;
+}
