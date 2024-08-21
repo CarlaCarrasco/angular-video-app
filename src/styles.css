@@ -7,3 +7,40 @@
     --m-font-sise: 24px;
     --s-font-size: 18px;
 }
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-size: 100%;
+    font-family: sans-serif;
+    background-color: var(--dark-blue);
+}
+
+body {
+    line-height: 1.5;
+    padding: 16px;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.root {
+    padding: 0;
+    margin: 0;
+}
