@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.videoService.getAllVideos().subscribe((data) => {
       console.log(data);
+      console.log(data.length)
     });
   }
 
