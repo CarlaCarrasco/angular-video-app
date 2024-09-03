@@ -26,9 +26,14 @@ getAllVideosBy(option: CATEGORIES): Observable<Video[]> {
 // Set bookmarked video
 }
 
+export interface thumbnail {
+  trending: any;
+  regular: any;
+}
+
 export interface Video { 
   title: string;
-  thumbnail: {};
+  thumbnail: thumbnail;
   year: number;
   category: string;
   rating: string;
