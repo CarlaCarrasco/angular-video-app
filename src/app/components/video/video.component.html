@@ -1,1 +1,12 @@
-<p style="color: #fff;">video works!</p>
+<div class="video-container">
+    <img src="{{video.thumbnail.regular?.medium}}" alt="{{video.title}}" class="video-thumbnail">
+    <div class="description">
+        <p class="description">
+            <span>{{ video.year }} . </span>
+            <span>{{ video.category }} . </span>
+            <span>{{ video.rating }}</span>
+        </p>
+        <h3 class="title">{{video.title}}</h3>
+    </div>
+
+</div>
