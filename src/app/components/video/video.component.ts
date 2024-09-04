@@ -11,5 +11,9 @@ import { Video } from '../../services/videos.service';
 export class VideoComponent {
   @Input() video!: Video;
 
+  movieIcon = 'assets/icon-category-movie.svg';
+  tvIcon = 'assets/icon-category-tv.svg';
+
+
 
 }

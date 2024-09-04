@@ -1,12 +1,13 @@
 <div class="video-container">
-    <img src="{{video.thumbnail.regular?.medium}}" alt="{{video.title}}" class="video-thumbnail">
-    <div class="description">
-        <p class="description">
-            <span>{{ video.year }} . </span>
-            <span>{{ video.category }} . </span>
-            <span>{{ video.rating }}</span>
-        </p>
-        <h3 class="title">{{video.title}}</h3>
-    </div>
-
+    <img src="{{video.thumbnail.regular?.small}}" alt="{{video.title}}" class="video-thumbnail">
+    <ul>
+        <li>{{ video.year }}</li>
+        <li>&bull;</li>
+        <li>
+            <img src="{{video.category === 'Movie' ? movieIcon : tvIcon}}" />
+            {{ video.category }}</li>
+        <li>&bull;</li>
+        <li>{{ video.rating }}</li>
+    </ul>
+    <h3 class="title">{{video.title}}</h3>
 </div>
