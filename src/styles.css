@@ -42,14 +42,16 @@ table {
 }
 
 .root {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: auto auto 1fr;
     padding: 0;
     margin: 0;
 }
 
 @media (min-width: 1024px) {
     .root {
-        flex-direction: row;
+        /* flex-direction: row; */
     }
 }

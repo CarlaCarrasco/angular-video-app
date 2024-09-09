@@ -1,5 +1,10 @@
 <div class="video-container">
-    <img src="{{video.thumbnail.regular?.small}}" alt="{{video.title}}" class="video-thumbnail">
+    <picture>
+        <source srcset="{{video.thumbnail.regular?.large}}" media="(min-width: 768px)">
+        <source srcset="{{video.thumbnail.regular?.medium}}" media="(min-width: 576px)">
+        <source srcset="{{video.thumbnail.regular?.small}}" media="(min-width: 0)">        
+        <img src="{{video.thumbnail.regular?.small}}" alt="{{video.title}}" class="video-thumbnail">
+    </picture>
     <ul>
         <li>{{ video.year }}</li>
         <li>&bull;</li>
