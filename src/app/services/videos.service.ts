@@ -7,13 +7,12 @@ import { map, Observable } from 'rxjs';
 })
 
 export class VideosService {
-  private videoJson = 'assets/data.json';
 
   constructor(private http: HttpClient) { }
 
   // TODO: Create interface for video
   getAllVideos(): Observable<Video[]> {
-    return this.http.get<any>(this.videoJson);
+    return this.http.get<Video[]>(`/api/videos`);
   }
 
 // Get all by filtering
