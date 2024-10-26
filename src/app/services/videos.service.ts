@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class VideosService {
+  allVideos?: Video[];
 
   constructor(private http: HttpClient) { }
 
-  // TODO: Create interface for video
   getAllVideos(): Observable<Video[]> {
+    if (this.allVideos) {
+      return of(this.allVideos);
+    }
+
     return this.http.get<Video[]>(`/api/videos`);
   }
 
@@ -41,6 +45,6 @@ export interface Video {
 }
 
 export enum CATEGORIES {
-  Movies = 'Movies',
-  TVShows = 'TVShows'
+  Movies = 'Movie',
+  TVShows = 'TV Series'
 }

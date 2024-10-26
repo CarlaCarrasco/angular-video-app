@@ -1,23 +1,10 @@
-<div style="display: flex; justify-content: center; width: 100%; color: white; padding: 16px; margin-bottom: 32px;">
-    <div>
-        <button (click)="doSomething()">Click me</button>
-        <h3>{{ signalValue() }}</h3>
-    </div>
-    <div>
-        <button (click)="doSomething2()">Click me</button>
-        <h3>{{ signalValue2() }}</h3>
-    </div>
-    <h1>Side Effect total: {{ total() }}</h1>
-</div>
-
-<div style="display: flex; justify-content: center; width: 100%; color: white; padding: 16px;">
-    <div>
-        <button (click)="updateBehavior1()">Click me</button>
-        <h3>{{behaviorBtn1$ | async }}</h3>
-    </div>
-    <div>
-        <button (click)="updateBehavior2()">Click me</button>
-        <h3>{{ behaviorBtn2$ | async }}</h3>
-    </div>
-    <h1>Behavior Subject total: {{ behaviorSubjectTotal$ | async }}</h1>
+<div class="videos-container">
+    @if (tvSeries$ | async; as series) {
+        @for (show of series; track show.title){
+            <app-video [video]="show"></app-video>
+        }
+    } 
+    @else {
+        <h1 style="color: #fff;">Loading...</h1>
+    }
 </div>
