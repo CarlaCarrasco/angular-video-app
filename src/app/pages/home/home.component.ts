@@ -13,10 +13,12 @@ import { Observable, take } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   videos$:  Observable<Video[]>;
+  trendingVideos$: Observable<Video[]>;
   videos: Video[] = [];
 
   constructor(private videoService: VideosService) { 
     this.videos$ = this.videoService.getAllVideos();
+    this.trendingVideos$ = this.videoService.getAllVideosByTrending();
   }
 
   ngOnInit(): void {

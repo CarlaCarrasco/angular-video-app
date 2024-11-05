@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 8px;
     color: white;
+    max-width: fit-content;
 }
 
 ul {

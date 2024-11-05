@@ -1,5 +1,12 @@
-.videos-container {
+.trending-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 24px;
+    max-height: 400px; /* Set the maximum height */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    width: 90vw;
 }

@@ -24,12 +24,16 @@ getAllVideosBy(option: CATEGORIES): Observable<Video[]> {
   return this.getAllVideos().pipe(map((videos) => videos.filter(video => video.category === option)));
 }
 
+getAllVideosByTrending(): Observable<Video[]> {
+  return this.getAllVideos().pipe(map((videos) => videos.filter(video => video.isTrending)));
+}
+
 // Get bookmarked
 getBookmarkedVideos(): Observable<Video[]> {
   return this.getAllVideos().pipe(map((videos) => videos.filter(video => video.isBookmarked)));
 }
 
-// Set bookmarked video
+// Set bookmarked videos
 setBookmarked(video: Video): Observable<Video[]> {
   return this.http.put<Video[]>(`/api/videos/${video.id}`, { 
     ...video,

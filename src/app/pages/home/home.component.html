@@ -1,3 +1,15 @@
+<h2>Trending</h2>
+<div class="trending-container">
+    @if (trendingVideos$ | async; as videos) {
+        @for(video of videos; track video.title){
+            <app-video [video]="video"></app-video>
+        }
+    } @else {
+        <h1 style="color: #fff;">Loading...</h1>
+    }
+</div>
+
+<h2>Recomended for you</h2>
 <div class="videos-container">
     @if (videos$ | async; as videos) {
         @for(video of videos; track video.title){
