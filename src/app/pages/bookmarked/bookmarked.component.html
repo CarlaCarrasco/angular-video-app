@@ -1,1 +1,10 @@
-<p>bookmarked works!</p>
+<div class="videos-container">
+    @if (bookmarkedVideos$ | async; as videos) {
+        @for (video of videos; track video.title){
+            <app-video [video]="video"></app-video>
+        }
+    } 
+    @else {
+        <h1 style="color: #fff;">Loading...</h1>
+    }
+</div>

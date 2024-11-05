@@ -15,3 +15,14 @@ ul {
 .title { 
     font-weight: 400;
 }
+
+.bookmark {
+    margin-left: auto;
+    background-color: beige;
+    color: black;
+}
+
+.marked {
+    background-color: green;
+    color: white;
+}

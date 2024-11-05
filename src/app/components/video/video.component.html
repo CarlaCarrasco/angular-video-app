@@ -13,6 +13,9 @@
             {{ video.category }}</li>
         <li>&bull;</li>
         <li>{{ video.rating }}</li>
+    <li class="bookmark">
+        <button [ngClass]="{ 'marked': video.isBookmarked }" (click)="onBookmarkClick()">Bookmark</button>
+    </li>
     </ul>
     <h3 class="title">{{video.title}}</h3>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,28 @@ getAllVideosBy(option: CATEGORIES): Observable<Video[]> {
 }
 
 // Get bookmarked
+getBookmarkedVideos(): Observable<Video[]> {
+  return this.getAllVideos().pipe(map((videos) => videos.filter(video => video.isBookmarked)));
+}
 
 // Set bookmarked video
+setBookmarked(video: Video): Observable<Video[]> {
+  return this.http.put<Video[]>(`/api/videos/${video.id}`, { 
+    ...video,
+   },
+    { headers: { 'Content-Type': 'application/json' } }
+    ).pipe(
+      tap((videos) => {
+        this.allVideos = videos;
+        console.log(videos);
+      }),
+      catchError((err) => {
+        console.error('Error setting bookmarked video', err);
+        return of([]);
+      })
+    );
+  }
+
 }
 
 export interface thumbnail {
@@ -36,6 +56,7 @@ export interface thumbnail {
 
 export interface Video { 
   title: string;
+  id: number;
   thumbnail: thumbnail;
   year: number;
   category: string;
